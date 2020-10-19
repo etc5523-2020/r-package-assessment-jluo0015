@@ -1,5 +1,5 @@
 Package: launchshiny
-Title: Launch the Shiny App by a function of a package
+Title: Launch the Shiny App by a function of the launchshiny package
 Version: 0.0.0.2020
 Authors@R: 
     person(given = "Jinhao",
@@ -7,9 +7,8 @@ Authors@R:
            role = c("aut", "cre"),
            email = "jluo0015@student.monash.edu",
            comment = c(ORCID = "0000-0001-6702-1023"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to
-    pick a license
+Description: This package is used to launch the Shiny app of the Shiny assessment by a function. Meanwhile, some logics of app would be refactored into R functions.  
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
