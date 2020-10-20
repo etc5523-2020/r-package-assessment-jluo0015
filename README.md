@@ -7,9 +7,11 @@ The goal of _your package name_ is to ...
 
 ## Installation
 
-You can install the  _your package name_ with:
+You can install the launchshiny package from [GitHub]() with:
 
 ``` r
+# install.packages("devtools")
+devtools::install_github("etc5523-2020/r-package-assessment-jluo0015")
 ```
 
 ## Example
@@ -17,7 +19,7 @@ You can install the  _your package name_ with:
 This is a basic example which shows you how to solve a common problem:
 
 ``` r
-library(yourpkg)
-## basic example code
+library(launchshiny)
+launch_app()
 ```
 
