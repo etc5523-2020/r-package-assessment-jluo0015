@@ -1,5 +1,5 @@
 Package: launchshiny
-Title: Launch the Shiny App by a function of the launchshiny package
+Title: Launch the Shiny App by a Function of the Launchshiny Package
 Version: 0.0.0.2020
 Authors@R: 
     person(given = "Jinhao",
@@ -15,10 +15,24 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 URL: https://github.com/etc5523-2020/r-package-assessment-jluo0015
 BugReports: https://github.com/etc5523-2020/r-package-assessment-jluo0015/issues
+Depends: 
+    R (>= 4.0.2)
 Imports: 
     here,
     shiny,
     coronavirus,
     dplyr,
     lubridate,
-    tidyr
+    tidyr,
+    ggplot2,
+    plotly,
+    magrittr,
+    stringr,
+    DT,
+    htmltools
+Suggests: 
+    knitr,
+    rmarkdown,
+    tibble,
+    glue
+VignetteBuilder: knitr

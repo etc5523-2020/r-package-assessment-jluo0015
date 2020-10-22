@@ -3,6 +3,9 @@
 \name{launch_app}
 \alias{launch_app}
 \title{Launch the Shiny app}
+\source{
+The Shiny app could be found in \href{https://jinhao-luo.shinyapps.io/shiny-assessment-jluo0015/}{here}
+}
 \usage{
 launch_app()
 }
@@ -16,7 +19,11 @@ The Shiny app will run automatically, and the interface of the app will pop up.
 This function is used to launch the Shiny app of the Shiny assessment,
 where is placed in the inst/app folder.
 }
+\note{
+Do not input anything as argument in the \emph{launch_app()} function.
+}
 \examples{
 launch_app()
+# No any argument required.
 
 }

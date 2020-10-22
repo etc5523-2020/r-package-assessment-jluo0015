@@ -7,8 +7,13 @@
 #' 
 #' @return The Shiny app will run automatically, and the interface of the app will pop up.
 #' 
+#' @note Do not input anything as argument in the *launch_app()* function.
+#' 
 #' @examples 
 #' launch_app()
+#' # No any argument required.
+#' 
+#' @source The Shiny app could be found in [here]( https://jinhao-luo.shinyapps.io/shiny-assessment-jluo0015/)
 #' 
 #' @export
 launch_app <- function(){

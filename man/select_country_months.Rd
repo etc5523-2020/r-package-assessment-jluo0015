@@ -6,42 +6,42 @@
 \format{
 This function will return a tibble with 8 columns.
 
-country
+\strong{country}
 \itemize{
-\item Name of country
+\item Name of country.
 }
 
-month
+\strong{month}
 \itemize{
 \item The range of months. Each row represent a month.
 }
 
-confirmed
+\strong{confirmed}
 \itemize{
-\item Monthly confirmed cases of COVID-19
+\item Monthly confirmed cases of COVID-19 .
 }
 
-death
+\strong{death}
 \itemize{
-\item Monthly mortality of COVID-19
+\item Monthly mortality of COVID-19.
 }
 
-recovered
+\strong{recovered}
 \itemize{
-\item Monthly recovered cases of COVID-19
+\item Monthly recovered cases of COVID-19.
 }
 
-cumulative_confirmed
+\strong{cumulative_confirmed}
 \itemize{
 \item Cumulative confirmed cases of current month, which calculated from January.
 }
 
-cumulative_death
+\strong{cumulative_death}
 \itemize{
 \item Cumulative mortality of current month, which calculated from January.
 }
 
-cumulative_recovered
+\strong{cumulative_recovered}
 \itemize{
 \item Cumulative recovered cases of current month, which calculated from January.
 }
@@ -51,20 +51,22 @@ select_country_months(country_select, start_month, end_month)
 }
 \arguments{
 \item{country_select}{The name of a country as a character vector.
-Currently, there are three countries available, which are Japan, US, and Australia.}
+Currently, there are three countries available, which are "Japan", "US", and "Australia".}
 
 \item{start_month}{The number of a month that represents the start of the range of months.
-It should be a integer, and the available months are between 1 and 10.}
+It should be an integer vector, and the available months are between 1 and 10.}
 
 \item{end_month}{The number of a month that represents the end of the range of months.
-It should be a integer, and the available months are between 1 and 10.}
+It should be an integer vector, and the available months are between 1 and 10.}
 }
 \value{
-A tibble shows the country, month, monthly cases, and the cumulative cases of COVID-19.
+A tibble that contains the information of country, month, monthly cases, and the cumulative cases of COVID-19.
 }
 \description{
 This function is used to find the three different monthly
 COVID-19 cases of the selected country within the specific range of months.
+This function refactors one part of the user interface-side (UI) logic of the Shiny app,
+which is the selection bar of selecting the country and the range of months.
 }
 \examples{
 select_country_months(country_select = "Japan", start_month = 1, end_month = 10)
