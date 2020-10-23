@@ -75,12 +75,12 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="your-package-name" class="section level1">
+<div id="launchshiny-package" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#your-package-name" class="anchor"></a>Your Package Name</h1></div>
+<a href="#launchshiny-package" class="anchor"></a>launchshiny package</h1></div>
 <!-- badges: start -->
 <!-- badges: end -->
-<p>The goal of <em>launchshiny</em> is to</p>
+<p>The goal of <em>launchshiny</em> is to decompose the Shiny app in order to investigate the components of that app and help users to understand how the app run. The app could be decomposed into three parts, which are run the app, the user interface-side logic and the server-side logic. The part of running the app has been transformed into the <em>launch_app</em> function. The user interface-side logic has been refactored as the functions of <em>select_country_month</em> and <em>select_country_months</em>. While, the server-side logic has been refactored as the functions of <em>create_cases_table</em> and <em>plot_country_daily_cases</em>.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
@@ -91,13 +91,155 @@
 <span class="co"># install.packages("devtools")</span>
 <span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span><span class="op">(</span><span class="st">"etc5523-2020/r-package-assessment-jluo0015"</span><span class="op">)</span></pre></div>
 </div>
-<div id="example" class="section level2">
+<div id="overviews" class="section level2">
 <h2 class="hasAnchor">
-<a href="#example" class="anchor"></a>Example</h2>
-<p>This is a basic example which shows you how to solve a common problem:</p>
+<a href="#overviews" class="anchor"></a>Overviews</h2>
+<p>There are five functions available in the <em>launchshiny</em> package, which are:</p>
+<ul>
+<li>launch_app()</li>
+<li>select_country_month()</li>
+<li>select_country_months()</li>
+<li>plot_country_daily_cases()</li>
+<li>create_cases_table()</li>
+</ul>
+<div id="the-run-app-function" class="section level3">
+<h3 class="hasAnchor">
+<a href="#the-run-app-function" class="anchor"></a>The run app function</h3>
+<p><strong>launch_app()</strong> function is used to run the app. It will returns the Shiny app automatically. You should command like:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit">
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/etc5523-2020/r-package-assessment-jluo0015">launchshiny</a></span><span class="op">)</span>
-<span class="fu"><a href="reference/launch_app.html">launch_app</a></span><span class="op">(</span><span class="op">)</span></pre></div>
+<span class="fu"><a href="reference/launch_app.html">launch_app</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># library(launchshiny) first</span></pre></div>
+</div>
+<div id="the-user-interface-side-logic-function" class="section level3">
+<h3 class="hasAnchor">
+<a href="#the-user-interface-side-logic-function" class="anchor"></a>The user interface-side logic function</h3>
+<p><strong>select_country_month()</strong> and <strong>select_country_months()</strong> are the two functions refactor the user interface-side logic of the app. <strong>select_country_month()</strong> will return the data of daily cases within a month, while <strong>select_country_months()</strong> function will return the data of monthly cases. They like the function to select and filter the data, and they will return the data in the table format.</p>
+<p>There 7 variables in the return of <em>select_country_month()</em> function:</p>
+<table class="table">
+<thead><tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>country</td>
+<td>Name of the country.</td>
+</tr>
+<tr class="even">
+<td>year</td>
+<td>The number of year.</td>
+</tr>
+<tr class="odd">
+<td>month</td>
+<td>The number of month</td>
+</tr>
+<tr class="even">
+<td>day</td>
+<td>The number of day.</td>
+</tr>
+<tr class="odd">
+<td>confirmed</td>
+<td>The number of daily confirmed cases of COVID-19.</td>
+</tr>
+<tr class="even">
+<td>death</td>
+<td>The number of daily mortality of COVID-19.</td>
+</tr>
+<tr class="odd">
+<td>recovered</td>
+<td>The number of daily recovered cases of COVID-19.</td>
+</tr>
+</tbody>
+</table>
+<p>There 8 variables in the return of <em>select_country_months()</em> function:</p>
+<table class="table">
+<colgroup>
+<col width="21%">
+<col width="78%">
+</colgroup>
+<thead><tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>country</td>
+<td>Name of the country.</td>
+</tr>
+<tr class="even">
+<td>months</td>
+<td>The range of months. Each row represent a month.</td>
+</tr>
+<tr class="odd">
+<td>confirmed</td>
+<td>Monthly confirmed cases of COVID-19 .</td>
+</tr>
+<tr class="even">
+<td>death</td>
+<td>Monthly mortality of COVID-19.</td>
+</tr>
+<tr class="odd">
+<td>recovered</td>
+<td>Monthly recovered cases of COVID-19.</td>
+</tr>
+<tr class="even">
+<td>cumulative_confirmed</td>
+<td>Cumulative confirmed cases of current month, which calculated from January.</td>
+</tr>
+<tr class="odd">
+<td>cumulative_death</td>
+<td>Cumulative mortality of current month, which calculated from January.</td>
+</tr>
+<tr class="even">
+<td>cumulative_recovered</td>
+<td>Cumulative recovered cases of current month, which calculated from January.</td>
+</tr>
+</tbody>
+</table>
+<p>You should command like:</p>
+<div class="sourceCode" id="cb3"><pre class="downlit">
+<span class="co"># To investigate the daily cases of Australia in August.</span>
+<span class="fu"><a href="reference/select_country_month.html">select_country_month</a></span><span class="op">(</span><span class="st">"Australia"</span>, <span class="fl">8</span><span class="op">)</span>
+
+<span class="co">#To investigate the monthly cases of Japna from January to October</span>
+<span class="fu"><a href="reference/select_country_months.html">select_country_months</a></span><span class="op">(</span>country_select <span class="op">=</span> <span class="st">"Japan"</span>, start_month <span class="op">=</span> <span class="fl">1</span>, end_month <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></pre></div>
+</div>
+<div id="the-server-side-logic-function" class="section level3">
+<h3 class="hasAnchor">
+<a href="#the-server-side-logic-function" class="anchor"></a>The server-side logic function</h3>
+<p><strong>plot_country_daily_cases()</strong> and <strong>create_cases_table()</strong> are the two functions refactor the server-side logic of the app. The <strong>plot_country_daily_cases()</strong> function will return a line chart in plotly format to show the fluctuation of the daily COVID-19 cases of a country in a selected month. While, the <strong>create_cases_table()</strong> function will return a table to display the daily or monthly COVID-19 cases of a country or a province, as well as the cumulative COVID-19 cases.</p>
+<p>You could command like:</p>
+<div class="sourceCode" id="cb4"><pre class="downlit">
+<span class="co"># To investigate the daily cases of US in April.</span>
+
+<span class="fu"><a href="reference/plot_country_daily_cases.html">plot_country_daily_cases</a></span><span class="op">(</span><span class="st">"US"</span>, <span class="fl">4</span><span class="op">)</span></pre></div>
+<p><img src="/inst/picture/plot.png" alt="Daily Plot of US in April"></p>
+<div class="sourceCode" id="cb5"><pre class="downlit">
+<span class="co"># To investigate the daily cases, as well as the cumulative cases of Japan.</span>
+
+<span class="fu"><a href="reference/create_cases_table.html">create_cases_table</a></span><span class="op">(</span>country_select <span class="op">=</span> <span class="st">"Japan"</span>, cases_frequency <span class="op">=</span> <span class="st">"daily"</span><span class="op">)</span></pre></div>
+<p><img src="/inst/picture/daily_table.png" alt="Daily Table of Japan"></p>
+<div class="sourceCode" id="cb6"><pre class="downlit">
+<span class="co"># To investigate the monthly cases, as well as the cumulative cases of Victoria, Australia.</span>
+
+<span class="fu"><a href="reference/create_cases_table.html">create_cases_table</a></span><span class="op">(</span>country_select <span class="op">=</span> <span class="st">"Japan"</span>, 
+                   province_select <span class="op">=</span> <span class="st">"Victoria"</span>, 
+                   cases_frequency <span class="op">=</span> <span class="st">"monthly"</span><span class="op">)</span></pre></div>
+<p><img src="/inst/picture/monthly_table.png" alt="Monthly Table of Victoria Australia"></p>
+</div>
+</div>
+<div id="solve-problems" class="section level2">
+<h2 class="hasAnchor">
+<a href="#solve-problems" class="anchor"></a>Solve problems</h2>
+<p>There might generate two problems:</p>
+<ol>
+<li><p>If the name of month in the output of figure and table which generated from the package or app is shown in Chinese, please use the command Sys.setlocale(“LC_ALL”, “english”) in console to convert the system language to English, and re-install and library the package or rerun the app again.</p></li>
+<li><p>Because the data used in the package and app are from the package called coronavirus, if there is any error occurred because of the data package installation, you could try:</p></li>
+</ol>
+<pre><code><a href="https://rdrr.io/r/utils/install.packages.html"># If you didn't install the devtools package, please install it first.
+install.packages("devtools") 
+
+devtools::install_github("RamiKrispin/coronavirus")</a></code></pre>
+<p>You could also report the bug <a href="https://github.com/etc5523-2020/r-package-assessment-jluo0015/issues">here</a>.</p>
 </div>
 </div>
   </div>
