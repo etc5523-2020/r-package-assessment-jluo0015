@@ -9,7 +9,11 @@
 #' 
 #' @examples 
 #' \dontrun{
+#' 
+#' # Use the following function to run the app
+#' 
 #' launch_app()
+#' 
 #' }
 #' 
 #' @source The Shiny app could be found in [here]( https://jinhao-luo.shinyapps.io/shiny-assessment-jluo0015/)

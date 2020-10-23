@@ -21,7 +21,11 @@ This function does not require any arguments to run this function. Simply enter 
 }
 \examples{
 \dontrun{
+
+# Use the following function to run the app
+
 launch_app()
+
 }
 
 }

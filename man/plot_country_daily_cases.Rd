@@ -25,11 +25,19 @@ which is the plot of displaying the daily COVID-19 cases of a country in a speci
 }
 \examples{
 \dontrun{
+
+# Plot the line chart of Japan in July.
+
 plot_country_daily_cases("Japan", 7)
+
+# Plot the line chart of Australia in April.
 
 plot_country_daily_cases("Australia", 4)
 
+# Plot the line chart of US in October.
+
 plot_country_daily_cases("US", 10)
+
 }
 
 }

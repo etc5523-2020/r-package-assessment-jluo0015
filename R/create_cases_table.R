@@ -23,14 +23,23 @@
 #' 
 #' @examples 
 #' \dontrun{
+#' 
+#' # Create the monthly table of Japan.
+#' 
 #' create_cases_table(country_select = "Japan", cases_frequency = "monthly")
+#' 
+#' # Create the monthly table of Victoria, Australia.
 #' 
 #' create_cases_table(country_select = "Australia", 
 #'                    province_select = "Victoria", 
 #'                    cases_frequency = "monthly")
 #'                    
+#' # Create the daily table of US.                  
+#'                    
 #' create_cases_table(country_select = "US", cases_frequency = "daily")
+#' 
 #' }
+#' 
 #' @export
 create_cases_table <- function(country_select, 
                                province_select = "",
