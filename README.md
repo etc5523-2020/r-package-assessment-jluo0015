@@ -3,7 +3,7 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of _launchshiny_ is to 
+The goal of _launchshiny_ is to decompose the Shiny app in order to investigate the components of that app. 
 
 ## Installation
 

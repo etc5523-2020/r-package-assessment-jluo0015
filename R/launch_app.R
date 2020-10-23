@@ -20,6 +20,10 @@ launch_app <- function(){
                                "app.R", 
                                package = "launchshiny")
   
+  if(app_directory == ""){
+    stop("Cannot find the example directory. Please try to re-install the 'launchshiny' package.")
+  }
+  
   shiny::runApp(app_directory, display.mode = "normal")
 }
 
