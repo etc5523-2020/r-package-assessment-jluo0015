@@ -32,6 +32,8 @@
 #' 
 #' @export
 select_country_month <- function(country_select, month_select){
+  
+  
   `%>%` <- magrittr::`%>%`
   data <- coronavirus::coronavirus
   

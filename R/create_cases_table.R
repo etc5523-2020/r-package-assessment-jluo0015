@@ -23,13 +23,14 @@
 #' 
 #' @examples 
 #' create_cases_table(country_select = "Japan", cases_frequency = "monthly")
-#' create_cases_table(country_select = "Australia, province_select = "Victoria", cases_frequency = "monthly")
-#' create_cases_table(country_select = "US, cases_frequency = "daily")
+#' create_cases_table(country_select = "Australia", province_select = "Victoria", cases_frequency = "monthly")
+#' create_cases_table(country_select = "US", cases_frequency = "daily")
 #' 
 #' @export
 create_cases_table <- function(country_select, 
                                province_select = "",
                                cases_frequency){
+  
   `%>%` <- magrittr::`%>%`
   table_data <- coronavirus::coronavirus %>% 
     dplyr::filter(country %in% c("Australia",

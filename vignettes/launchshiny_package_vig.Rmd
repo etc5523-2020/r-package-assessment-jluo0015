@@ -121,7 +121,7 @@ In the **Table** subsection, select the country first. Then, select which type o
 2. Because the data used in the package and app are from the package called _coronavirus_, if there is any error occurred because of the data package installation, you could try:
 
 ```{r install-data, eval=FALSE}
-# If you didn't install the devtools package, please install it first.
+# If you didn't install the devtools package, please install this package first.
 install.packages("devtools") 
 
 devtools::install_github("RamiKrispin/coronavirus")

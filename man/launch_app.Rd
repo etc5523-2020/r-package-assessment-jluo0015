@@ -9,9 +9,6 @@ The Shiny app could be found in \href{https://jinhao-luo.shinyapps.io/shiny-asse
 \usage{
 launch_app()
 }
-\arguments{
-\item{NULL}{do not require any arguments to run this function. Simply enter and run this function.}
-}
 \value{
 The Shiny app will run automatically, and the interface of the app will pop up.
 }
@@ -20,7 +17,7 @@ This function is used to launch the Shiny app of the Shiny assessment,
 where is placed in the inst/app folder.
 }
 \note{
-Do not input anything as argument in the \emph{launch_app()} function.
+This function does not require any arguments to run this function. Simply enter and run this function.
 }
 \examples{
 launch_app()

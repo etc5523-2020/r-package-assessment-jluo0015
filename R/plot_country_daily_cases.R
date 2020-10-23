@@ -20,6 +20,7 @@
 #' 
 #' @export
 plot_country_daily_cases <- function(country_select, month_select){
+  
   `%>%` <- magrittr::`%>%`
   plot_data <- coronavirus::coronavirus
   

@@ -14,7 +14,7 @@ navbar:
     home: ~
     help:
       text: Get started
-      herf: articles/launchshiny_package_vig.html
+      href: articles/launchshiny_package_vig.html
     github:
       icon: fa-github fa-lg
-      herf: https://github.com/etc5523-2020/r-package-assessment-jluo0015
+      href: https://github.com/etc5523-2020/r-package-assessment-jluo0015
