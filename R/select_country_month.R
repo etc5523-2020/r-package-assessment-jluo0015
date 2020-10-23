@@ -37,8 +37,22 @@ select_country_month <- function(country_select, month_select){
   
   country <- confirmed<-death<-recovered<-month<-year<-day<-types<-cases<-date <- NULL
   
+  num_char_country <- nchar(country_select)
+  num_char_month <- nchar(month_select)
+  len_country <- length(country_select)
+  len_month <- length(month_select)
+  
+  stopifnot(
+    is.numeric(month_select),
+    num_char_month >0,
+    num_char_country >0,
+    len_country >0,
+    len_month > 0 
+  )
+  
   `%>%` <- magrittr::`%>%`
   data <- coronavirus::coronavirus
+  
   
   country_month <- data %>% 
     dplyr::filter(country %in% c("Australia",

@@ -36,6 +36,60 @@ create_cases_table <- function(country_select,
                                province_select = "",
                                cases_frequency){
   
+  first_letter_pro <- unlist(strsplit(province_select, split = ""))[1]
+  first_letter_fre <- unlist(strsplit(cases_frequency, split = ""))[1]
+  
+  upper_case_pro <- toupper(first_letter_pro)
+  lower_case_fre <- tolower(first_letter_fre)
+  
+  res <- list()
+  num_char_pro<- nchar(province_select)
+  
+  if(country_select == "Japan"|country_select == "US"){
+    
+    if(num_char_pro > 0){
+      res <- "TRUE"
+    }
+    else{
+      res <- "FALSE"
+    }
+  }
+  
+  num_char_country <- nchar(country_select)
+  num_char_fre <- nchar(cases_frequency)
+  len_country <- length(country_select)
+  len_fre <- length(cases_frequency)
+  
+  if(country_select == "Japan"|country_select == "US"){
+  stopifnot(
+    first_letter_fre == lower_case_fre,
+    num_char_country >0,
+    num_char_fre >0,
+    len_country >0,
+    len_fre > 0,
+    res == "FALSE")
+  }
+  else{
+    if(num_char_pro == 0){
+    stopifnot(
+      first_letter_fre == lower_case_fre,
+      num_char_country >0,
+      num_char_fre >0,
+      len_country >0,
+      len_fre > 0)
+    }
+    else{
+      stopifnot(
+        first_letter_pro == upper_case_pro,
+        first_letter_fre == lower_case_fre,
+        num_char_country >0,
+        num_char_fre >0,
+        len_country >0,
+        len_fre > 0)
+    }
+  }
+  
+  
   country<-province<-month<-year<-confirmed<-death<-recovered<-
     `monthly confirmed`<-`monthly death`<-`monthly recovered`<-`daily confirmed`<-
     `daily death`<-`daily recovered`<-`cumulative confirmed`<-`cumulative death`<-
