@@ -81,7 +81,7 @@ select_country_months(country_select = "Japan", start_month = 1, end_month = 10)
 You could command like:
 
 ```r
-# To investigate the daily cases of US in April
+# To investigate the daily cases of US in April.
 
 plot_country_daily_cases("US", 4)
 
@@ -89,19 +89,40 @@ plot_country_daily_cases("US", 4)
 ![Daily Plot of US in April](/inst/picture/plot.png)
 
 
+```r
+# To investigate the daily cases, as well as the cumulative cases of Japan.
 
-
-
-
-
-
-
-## Example
-
-This is a basic example which shows you how to solve a common problem:
-
-``` r
-library(launchshiny)
-launch_app()
+create_cases_table(country_select = "Japan", cases_frequency = "daily")
 ```
 
+![Daily Table of Japan](/inst/picture/daily_table.png)
+
+
+```r
+# To investigate the monthly cases, as well as the cumulative cases of Victoria, Australia.
+
+create_cases_table(country_select = "Japan", 
+                   province_select = "Victoria", 
+                   cases_frequency = "monthly")
+```
+
+![Monthly Table of Victoria Australia](/inst/picture/monthly_table.png)
+
+
+
+## Solve problems
+
+There might generate two problems:
+
+1. If the name of month in the output of figure and table which generated from the package or app is shown in Chinese, please use the command Sys.setlocale(“LC_ALL”, “english”) in console to convert the system language to English, and re-install and library the package or rerun the app again.
+
+2. Because the data used in the package and app are from the package called coronavirus, if there is any error occurred because of the data package installation, you could try:
+
+```
+# If you didn't install the devtools package, please install it first.
+install.packages("devtools") 
+
+devtools::install_github("RamiKrispin/coronavirus")
+```
+
+You could also report the bug [here](https://github.com/etc5523-2020/r-package-assessment-jluo0015/issues).
