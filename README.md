@@ -131,7 +131,8 @@ launchshiny::create_cases_table(country_select = "Australia",
                                 cases_frequency = "monthly")
 ```
 
-<img src="man/figures/README-table2-1.png" width="100%" />
+![Monthly and cumulative cases of Victoria,
+Australia](man/figures/monthly_table.png)
 
 ## Solve problems
 

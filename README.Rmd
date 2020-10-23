@@ -111,7 +111,7 @@ launchshiny::create_cases_table(country_select = "Japan", cases_frequency = "dai
 
 
 
-```{r table2}
+```{r table2, eval=FALSE}
 # To investigate the monthly cases, as well as the cumulative cases of Victoria, Australia.
 
 launchshiny::create_cases_table(country_select = "Australia", 
@@ -119,7 +119,7 @@ launchshiny::create_cases_table(country_select = "Australia",
                                 cases_frequency = "monthly")
 ```
 
-
+![Monthly and cumulative cases of Victoria, Australia](man/figures/monthly_table.png)
 
 ## Solve problems
 
