@@ -16,7 +16,7 @@ RoxygenNote: 7.1.1
 URL: https://github.com/etc5523-2020/r-package-assessment-jluo0015
 BugReports: https://github.com/etc5523-2020/r-package-assessment-jluo0015/issues
 Depends: 
-    R 
+    R (>= 4.0.2)
 Imports: 
     here,
     shiny,
@@ -29,7 +29,8 @@ Imports:
     magrittr,
     stringr,
     DT,
-    utils
+    utils,
+    devtools
 Suggests: 
     knitr,
     rmarkdown,

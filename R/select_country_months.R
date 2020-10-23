@@ -37,12 +37,15 @@
 #' 
 #' @examples 
 #' select_country_months(country_select = "Japan", start_month = 1, end_month = 10)
+#' 
 #' select_country_months(country_select = "US", start_month = 3, end_month = 9)
+#' 
 #' select_country_months(country_select = "Australia", start_month = 5, end_month = 6)
 #'
 #' @export
 select_country_months <- function(country_select, start_month, end_month){
   
+  country <- month <-confirmed<-death<-recovered<-NULL
   
   `%>%` <- magrittr::`%>%`
   data <- coronavirus::coronavirus

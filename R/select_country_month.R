@@ -27,7 +27,9 @@
 #' 
 #' @examples 
 #' select_country_month(country_select = "Japan", month_select = 1)
+#' 
 #' select_country_month(country_select = "US", month_select = 3)
+#' 
 #' select_country_month(country_select = "Australia", month_select = 5)
 #' 
 #' @export

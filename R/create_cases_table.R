@@ -23,13 +23,22 @@
 #' 
 #' @examples 
 #' create_cases_table(country_select = "Japan", cases_frequency = "monthly")
-#' create_cases_table(country_select = "Australia", province_select = "Victoria", cases_frequency = "monthly")
+#' 
+#' create_cases_table(country_select = "Australia", 
+#'                    province_select = "Victoria", 
+#'                    cases_frequency = "monthly")
+#'                    
 #' create_cases_table(country_select = "US", cases_frequency = "daily")
 #' 
 #' @export
 create_cases_table <- function(country_select, 
                                province_select = "",
                                cases_frequency){
+  
+  country<-province<-month<-year<-confirmed<-death<-recovered<-
+    `monthly confirmed`<-`monthly death`<-`monthly recovered`<-`daily confirmed`<-
+    `daily death`<-`daily recovered`<-`cumulative confirmed`<-`cumulative death`<-
+    `cumulative recovered`<-NULL
   
   `%>%` <- magrittr::`%>%`
   table_data <- coronavirus::coronavirus %>% 

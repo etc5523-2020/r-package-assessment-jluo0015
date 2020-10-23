@@ -70,7 +70,9 @@ which is the selection bar of selecting the country and the range of months.
 }
 \examples{
 select_country_months(country_select = "Japan", start_month = 1, end_month = 10)
+
 select_country_months(country_select = "US", start_month = 3, end_month = 9)
+
 select_country_months(country_select = "Australia", start_month = 5, end_month = 6)
 
 }

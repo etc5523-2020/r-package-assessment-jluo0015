@@ -34,7 +34,11 @@ please do not input any character string into the argument of \emph{province_sel
 }
 \examples{
 create_cases_table(country_select = "Japan", cases_frequency = "monthly")
-create_cases_table(country_select = "Australia", province_select = "Victoria", cases_frequency = "monthly")
+
+create_cases_table(country_select = "Australia", 
+                   province_select = "Victoria", 
+                   cases_frequency = "monthly")
+                   
 create_cases_table(country_select = "US", cases_frequency = "daily")
 
 }

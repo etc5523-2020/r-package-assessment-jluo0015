@@ -16,8 +16,10 @@
 #' @export
 launch_app <- function(){
   
-  app_directory <- system.file("inst", "app", package = "launchshiny")
+  app_directory <- system.file("app", 
+                               "app.R", 
+                               package = "launchshiny")
   
-  shiny::runApp(app_directory)
+  shiny::runApp(app_directory, display.mode = "normal")
 }
 
