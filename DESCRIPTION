@@ -36,5 +36,7 @@ Suggests:
     glue,
     testthat,
     tidyverse,
-    shinythemes
+    shinythemes,
+    devtools,
+    htmltools
 VignetteBuilder: knitr
