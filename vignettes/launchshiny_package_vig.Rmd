@@ -1,0 +1,129 @@
+---
+title: "launchshiny package"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{launchshiny package}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  out.width = "80%"
+)
+```
+
+This package is used to decompose the Shiny app called **The COVID-19 exploration app**. The Shiny app has been decomposed into three parts, and these three parts has been transformed into five functions in the **launchshiny** package. The explanations are as following:
+
+1. The first part of the app is the _Run App_ button or the _runApp_ command, they have been transformed as the *launch_app* function in the package.
+
+2. The second part is the _user interface-side logic_ of the app, and it has been refactored as two functions of the package, which are *select_country_months* and *select_country_month*.
+
+3. The third part of the app is the _server-side logic_. It also has been refactored as two functions of the package, which are *plot_country_daily_cases* and *create_cases_table*. 
+
+Beside, the package and the app use the data from the package of **coronavirus**, you could investigate the data by clicking [here](https://github.com/RamiKrispin/coronavirus).
+
+# Exploration of the functions of launchshiny package
+
+```{r setup}
+library(launchshiny)
+```
+
+## How to launch the app
+
+By directly using the **launch_app()** function after library the launchshiny package, you could launch the app. You do not need to input any arguments into the function, just simply commanding the function and the app will run automatically. 
+
+You could launch the app via: 
+
+```{r launch-app, eval=FALSE}
+launch_app() 
+# The app will run automatically without any argument.
+```
+
+## Find the monthly COVID-19 cases within a range of months for a country
+
+The **select_country_months** function is used to discover the monthly COVID-19 cases of a country within a range of months. You need to input the country name in a character vector, and the start and the end of the range of months in an integer vector. The function will return the statistics in the table format. Besides, only three countries are available, which are Australia,Japan and US. And the range of months is between 1 and 10. 
+
+You could find the data via:
+
+```{r find-data-monthly}
+select_country_months(country_select = "Japan", start_month = 1, end_month = 10)
+```
+
+## Find the daily COVID-19 cases within a month for a country
+
+The **select_country_month** function is used to discover the daily COVID-19 cases of a country in a month. You need to input the country name in a character vector, and a month in an integer vector. The function will also return the statistics in the table format. Besides, only three countries are available, which are Australia,Japan and US. And the range of months is between 1 and 10. 
+
+You could find the data via:
+
+```{r find-data-daily}
+library(tibble)
+select_country_month(country_select = "Australia", month_select = 5)
+```
+
+## Create the daily COVID-19 cases plot of a country
+
+The **plot_country_daily_cases** function is used to plot the daily COVID-19 cases of a inputted country. You need to input the country name in a character vector, and a month in an integer vector. The function will return a plotly line chart which show the fluctuation of the daily COVID-19 cases of a country. Besides, only three countries are available, which are Australia,Japan and US. And the range of months is between 1 and 10. 
+
+You could create that line chart via：
+
+```{r data-plot}
+plot_country_daily_cases(country_select = "US", month_select = 7)
+```
+
+## Create the COVID-19 cases table
+
+The **create_cases_table** function is used to create a table to display the daily or monthly COVID-19 cases of a country or a province. If you want to investigate the daily or monthly cases of a country, you need to input the country name in a character vector first. Then, inputting _"monthly"_ or _"daily"_ into the argument of *cases_frequency*. While, if you want to investigate the daily or monthly cases of a province, you need to input the country name in a character vector first. Then, inputting the province name in a character vector if the data are available. At last, inputting _"monthly"_ or _"daily"_ into the argument of *cases_frequency*. The function will return an interactive data table. Besides, only three countries are available, which are Australia,Japan and US. And only Australia provides provincial data, which are `r glue::glue_collapse(unique(dplyr::filter(coronavirus::coronavirus, country == "Australia")$province), sep = ", ", last = " and ")`.
+
+
+You could create the table via:
+
+- If you want to create a table of a country with monthly cases. 
+
+```{r data-table-one}
+create_cases_table(country_select = "Japan", cases_frequency = "monthly") 
+# You could change the "monthly" to "daily" if you want to investigate the daily cases.
+```
+
+- If you want to create a table of a province with daily cases. 
+
+```{r data-table-two}
+create_cases_table(country_select = "Australia", province_select = "Victoria", cases_frequency = "daily") 
+
+# You could change the "daily" to "monthly" if you want to investigate the monthly cases.
+# Currently, only Australia provides the provincial data. 
+```
+
+# Exploration of the App itself
+
+You could find the app [here](https://jinhao-luo.shinyapps.io/shiny-assessment-jluo0015/). The following sections would provide the explanations and instructions of the app. 
+
+## What is the app
+
+The Shiny app called **The COVID-19 exploration app**, which is created to provide opportunities for readers to explore the situation of COVID-19 in their interested countries.
+
+There are three main sections in this app. The _About_ section provides the basic information of the app. The _App_ section has been divided into three subsection. The first one is _Explanation_, which provides instruction of the app. The second subsection is _Figure_, which contains two plots. These two plots display the trend of the monthly COVID-19 cases of a country and the fluctuation of daily cases within a month for a country, respectively. The last one is _Table_, which is an interactive data table shows the daily or monthly COVID-19 cases of a country or a province, as well as the cumulative cases. The last section is _Citation_, which provides the data source and the references. 
+
+## Guidelines of the app 
+
+Firstly, reading the **About** section first to understand the purpose this app.
+
+In the **Figure** subsection, select the country you want to investigate first. Then, select the range of months you want to observe, and the corresponding figure would show in the top right hand side. Because the unit of date range input is month only, you could select the month only. You can type the month you want in the range input, directly. Or you could choose by the calendar. Just clicking the blank of range input, selecting the month you want, clicking any one day in the calendar, and the blank would show the number of month. The last input requirement is used to select a particular month to observe the daily cases within that month. The corresponding figure would show in the bottom right hand side. Users could type the number of month directly or use the calendar to choose, which is as same as the usage explained above. In addition, these two figure are plotly figure, which means the information in figure could show up when users put the arrow in a point of the figure. Furthermore, Users could choose a particular month by clicking the point in the top right hand side figure, the selected month would show in the particular month selection input bar (the last input requirement), and the corresponding figure would also alter.
+
+In the **Table** subsection, select the country first. Then, select which type of data you want to show in the table. You could select the country-based data which are summarised by level of country. Or you could select province-based data which are summarised based on the level of province of your selected country, if the database provides the data of province. If you select the province-based table, you could select the province you want to analysis in the following selection bar. At last, select the frequency of the cases. There are two types of frequency which are monthly cases or daily cases. After you selecting, the final table would show up.
+
+# Notes
+
+1. If the name of month in the output of figure and table which generated from the package or app is shown in Chinese, please use the command _Sys.setlocale("LC_ALL", "english")_ in console to convert the system language to English, and re-install and library the package or rerun the app again. 
+
+2. Because the data used in the package and app are from the package called _coronavirus_, if there is any error occurred because of the data package installation, you could try:
+
+```{r install-data, eval=FALSE}
+# If you didn't install the devtools package, please install this package first.
+install.packages("devtools") 
+
+devtools::install_github("RamiKrispin/coronavirus")
+```
+
