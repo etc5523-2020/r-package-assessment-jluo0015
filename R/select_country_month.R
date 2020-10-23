@@ -33,6 +33,7 @@
 #' @export
 select_country_month <- function(country_select, month_select){
   
+  country <- confirmed<-death<-recovered<-month<-year<-day<-types<-cases<-date <- NULL
   
   `%>%` <- magrittr::`%>%`
   data <- coronavirus::coronavirus
