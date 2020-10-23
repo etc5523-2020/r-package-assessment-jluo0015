@@ -8,8 +8,8 @@
 #' @note This function does not require any arguments to run this function. Simply enter and run this function. 
 #' 
 #' @examples 
-#' launch_app()
-#' # No any argument required.
+#' # launch_app()
+#' 
 #' 
 #' @source The Shiny app could be found in [here]( https://jinhao-luo.shinyapps.io/shiny-assessment-jluo0015/)
 #' 
