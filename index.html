@@ -211,20 +211,20 @@
 <div class="sourceCode" id="cb4"><pre class="downlit">
 <span class="co"># To investigate the daily cases of US in April.</span>
 
-<span class="fu"><a href="reference/plot_country_daily_cases.html">plot_country_daily_cases</a></span><span class="op">(</span><span class="st">"US"</span>, <span class="fl">4</span><span class="op">)</span></pre></div>
-<p><img src="docs/reference/figures/plot.png" alt="Daily Plot of US in April"></p>
+<span class="fu">launchshiny</span><span class="fu">::</span><span class="fu"><a href="reference/plot_country_daily_cases.html">plot_country_daily_cases</a></span><span class="op">(</span><span class="st">"US"</span>, <span class="fl">4</span><span class="op">)</span></pre></div>
+<p><img src="reference/figures/plot.png" alt="US daily cases in April"></p>
 <div class="sourceCode" id="cb5"><pre class="downlit">
 <span class="co"># To investigate the daily cases, as well as the cumulative cases of Japan.</span>
 
-<span class="fu"><a href="reference/create_cases_table.html">create_cases_table</a></span><span class="op">(</span>country_select <span class="op">=</span> <span class="st">"Japan"</span>, cases_frequency <span class="op">=</span> <span class="st">"daily"</span><span class="op">)</span></pre></div>
-<p><img src="docs/reference/figures/daily_table.png" alt="Daily Table of Japan"></p>
+<span class="fu">launchshiny</span><span class="fu">::</span><span class="fu"><a href="reference/create_cases_table.html">create_cases_table</a></span><span class="op">(</span>country_select <span class="op">=</span> <span class="st">"Japan"</span>, cases_frequency <span class="op">=</span> <span class="st">"daily"</span><span class="op">)</span></pre></div>
+<p><img src="reference/figures/README-table1-1.png" width="100%"></p>
 <div class="sourceCode" id="cb6"><pre class="downlit">
 <span class="co"># To investigate the monthly cases, as well as the cumulative cases of Victoria, Australia.</span>
 
-<span class="fu"><a href="reference/create_cases_table.html">create_cases_table</a></span><span class="op">(</span>country_select <span class="op">=</span> <span class="st">"Japan"</span>, 
-                   province_select <span class="op">=</span> <span class="st">"Victoria"</span>, 
-                   cases_frequency <span class="op">=</span> <span class="st">"monthly"</span><span class="op">)</span></pre></div>
-<p><img src="docs/reference/figures/monthly_table.png" alt="Monthly Table of Victoria Australia"></p>
+<span class="fu">launchshiny</span><span class="fu">::</span><span class="fu"><a href="reference/create_cases_table.html">create_cases_table</a></span><span class="op">(</span>country_select <span class="op">=</span> <span class="st">"Australia"</span>, 
+                                province_select <span class="op">=</span> <span class="st">"Victoria"</span>, 
+                                cases_frequency <span class="op">=</span> <span class="st">"monthly"</span><span class="op">)</span></pre></div>
+<p><img src="reference/figures/README-table2-1.png" width="100%"></p>
 </div>
 </div>
 <div id="solve-problems" class="section level2">
@@ -235,10 +235,11 @@
 <li><p>If the name of month in the output of figure and table which generated from the package or app is shown in Chinese, please use the command Sys.setlocale(“LC_ALL”, “english”) in console to convert the system language to English, and re-install and library the package or rerun the app again.</p></li>
 <li><p>Because the data used in the package and app are from the package called coronavirus, if there is any error occurred because of the data package installation, you could try:</p></li>
 </ol>
-<pre><code><a href="https://rdrr.io/r/utils/install.packages.html"># If you didn't install the devtools package, please install it first.
-install.packages("devtools") 
+<!-- end list --><div class="sourceCode" id="cb7"><pre class="downlit">
+<span class="co"># If you didn't install the devtools package, please install it first.</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"devtools"</span><span class="op">)</span> 
 
-devtools::install_github("RamiKrispin/coronavirus")</a></code></pre>
+<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span><span class="op">(</span><span class="st">"RamiKrispin/coronavirus"</span><span class="op">)</span></pre></div>
 <p>You could also report the bug <a href="https://github.com/etc5523-2020/r-package-assessment-jluo0015/issues">here</a>.</p>
 </div>
 </div>
