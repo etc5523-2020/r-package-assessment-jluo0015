@@ -33,6 +33,7 @@ Only Australia has the available provincial data,
 please do not input any character string into the argument of \emph{province_select} when choosing "Japan" or "US".
 }
 \examples{
+\dontrun{
 create_cases_table(country_select = "Japan", cases_frequency = "monthly")
 
 create_cases_table(country_select = "Australia", 
@@ -40,5 +41,5 @@ create_cases_table(country_select = "Australia",
                    cases_frequency = "monthly")
                    
 create_cases_table(country_select = "US", cases_frequency = "daily")
-
+}
 }

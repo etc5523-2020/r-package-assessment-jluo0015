@@ -1,5 +1,5 @@
 
-# launchshiny package
+# launchshiny
 <!-- badges: start -->
 <!-- badges: end -->
 
@@ -86,7 +86,7 @@ You could command like:
 plot_country_daily_cases("US", 4)
 
 ```
-![Daily Plot of US in April](/inst/picture/plot.png)
+![Daily Plot of US in April](docs/reference/figures/plot.png)
 
 
 ```r
@@ -95,7 +95,7 @@ plot_country_daily_cases("US", 4)
 create_cases_table(country_select = "Japan", cases_frequency = "daily")
 ```
 
-![Daily Table of Japan](/inst/picture/daily_table.png)
+![Daily Table of Japan](docs/reference/figures/daily_table.png)
 
 
 ```r
@@ -106,7 +106,7 @@ create_cases_table(country_select = "Japan",
                    cases_frequency = "monthly")
 ```
 
-![Monthly Table of Victoria Australia](/inst/picture/monthly_table.png)
+![Monthly Table of Victoria Australia](docs/reference/figures/monthly_table.png)
 
 
 

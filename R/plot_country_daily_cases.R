@@ -14,11 +14,13 @@
 #' @return A line graph that shows three types of daily COVID-19 cases for a month in a country.
 #' 
 #' @examples 
+#' \dontrun{
 #' plot_country_daily_cases("Japan", 7)
 #' 
 #' plot_country_daily_cases("Australia", 4)
 #' 
 #' plot_country_daily_cases("US", 10)
+#' }
 #' 
 #' @export
 plot_country_daily_cases <- function(country_select, month_select){

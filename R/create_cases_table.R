@@ -22,6 +22,7 @@
 #' please do not input any character string into the argument of *province_select* when choosing "Japan" or "US".
 #' 
 #' @examples 
+#' \dontrun{
 #' create_cases_table(country_select = "Japan", cases_frequency = "monthly")
 #' 
 #' create_cases_table(country_select = "Australia", 
@@ -29,7 +30,7 @@
 #'                    cases_frequency = "monthly")
 #'                    
 #' create_cases_table(country_select = "US", cases_frequency = "daily")
-#' 
+#' }
 #' @export
 create_cases_table <- function(country_select, 
                                province_select = "",

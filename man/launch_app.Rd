@@ -20,7 +20,8 @@ where is placed in the inst/app folder.
 This function does not require any arguments to run this function. Simply enter and run this function.
 }
 \examples{
-# launch_app()
-
+\dontrun{
+launch_app()
+}
 
 }

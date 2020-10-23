@@ -24,10 +24,12 @@ This function refactors one part of the server-side logic of the Shiny app,
 which is the plot of displaying the daily COVID-19 cases of a country in a specific month.
 }
 \examples{
+\dontrun{
 plot_country_daily_cases("Japan", 7)
 
 plot_country_daily_cases("Australia", 4)
 
 plot_country_daily_cases("US", 10)
+}
 
 }
