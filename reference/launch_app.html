@@ -79,7 +79,9 @@ where is placed in the inst/app folder." />
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li class="dropdown-header">Get started</li>
+        <li>
+  <a href="../articles/launchshiny_package_vig.html">Get started</a>
+</li>
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
@@ -98,7 +100,7 @@ where is placed in the inst/app folder." />
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a>
+  <a href="https://github.com/etc5523-2020/r-package-assessment-jluo0015">
     <span class="fa fa-github fa-lg"></span>
      
   </a>
@@ -128,14 +130,6 @@ where is placed in the inst/app folder.</p>
 
     <pre class="usage"><span class='fu'>launch_app</span><span class='op'>(</span><span class='op'>)</span></pre>
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>NULL</th>
-      <td><p>do not require any arguments to run this function. Simply enter and run this function.</p></td>
-    </tr>
-    </table>
 
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
@@ -145,11 +139,11 @@ where is placed in the inst/app folder.</p>
     <p>The Shiny app will run automatically, and the interface of the app will pop up.</p>
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
-    <p>Do not input anything as argument in the <em>launch_app()</em> function.</p>
+    <p>This function does not require any arguments to run this function. Simply enter and run this function.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>launch_app</span><span class='op'>(</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='error'>Error in normalizePath(appFile, mustWork = TRUE): path[1]="/private/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/RtmpcSjg2i/file7711d51b1f7/inst/app/app.R": No such file or directory</span></div><div class='input'><span class='co'># No any argument required.</span>
+</div><div class='output co'>#&gt; <span class='error'>Error in shinyAppDir(x): No Shiny application exists at the path ""</span></div><div class='input'><span class='co'># No any argument required.</span>
 
 </div></pre>
   </div>
